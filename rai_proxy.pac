@@ -8,7 +8,7 @@ function FindProxyForURL(url, host) {
   //   a given page.
   // - Protip 2: If you add an entry for your server to `/etc/hosts` in the form of
   //   `IP_address domain_name_url alias`, the `host` can be matched to the `alias`.
-  if (shExpMatch(url, "rai*-live.akamaized.net/*")) {
+  if (shExpMatch(url, "raicinque1-live.akamaized.net")) {
     // Route through server.
     return proxy;
   }
