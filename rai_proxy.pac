@@ -1,5 +1,4 @@
 function FindProxyForURL(url, host) {
-  proxy = "SOCKS 127.0.0.1:8080"
 
   // Setup proxy filters.
   // - Use `host` for IP addresses and domain names.
@@ -8,10 +7,9 @@ function FindProxyForURL(url, host) {
   //   a given page.
   // - Protip 2: If you add an entry for your server to `/etc/hosts` in the form of
   //   `IP_address domain_name_url alias`, the `host` can be matched to the `alias`.
-  if (dnsDomainIs(host, "rai*-live.akamaized.net")) {
-    // Route through server.
-    return proxy;
-  }
+
+if (shExpMatch(host, "rai*.akamaized.net"))
+    return "PROXY 127.0.0.1:8080";
 
   // Route everything else directly!
   return "DIRECT";
